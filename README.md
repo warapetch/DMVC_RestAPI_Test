@@ -19,7 +19,7 @@ Rest API ด้วย DelphiMVCFramework <BR>
     >     // แยกโฟลเดอร์ ในการทำงานโดยให้ส่ง imageType เข้ามา<BR>
     >     // imageType >> 'emp' , 'product' , 'member'<BR>
     >     // กำหนด Foloder ตามต้องการ<BR>
-    >     DestFolder := '...\images\'+imageType+'\';<BR>
+    >     DestFolder := '...\images\\'+imageType+'\\';<BR>
     >     //-------------------------------<BR>
     >     // use Form-Data Only !!<BR>
     >     //-------------------------------<BR>
