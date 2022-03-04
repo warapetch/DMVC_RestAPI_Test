@@ -10,35 +10,33 @@ Rest API ด้วย DelphiMVCFramework <BR>
 
     โค้ดในส่วนของการอัพโหลดไฟล์ <BR>
     #UploadFile <BR>
-    procedure TEmployeeController.UploadFile(imageType : String;id: Integer);<BR>
-    var FileName: string;<BR>
-        FileStream: TFileStream; //System.Classes.TFileStream<BR>
-        I : Integer;<BR>
-        DestFolder : string; //System.IOUtils.TFile<BR>
-    <BR>
-    begin<BR>
-        // 6503-04 21.30<BR>
-        // แยกโฟลเดอร์ ในการทำงานโดยให้ส่ง imageType เข้ามา<BR>
-	    // imageType >> 'emp' , 'product' , 'member'<BR>
-        // กำหนด Foloder ตามต้องการ<BR>
-	    DestFolder := '...\images\'+imageType+'\';<BR>
-        //-------------------------------<BR>
-        // use Form-Data Only !!<BR>
-        //-------------------------------<BR>
-  	    for I := 0 to Context.Request.RawWebRequest.Files.Count - 1 do<BR>
-  	        begin<BR>
-    		    FileName := String(Context.Request.Files[I].FileName);<BR>
-    		    FileStream := TFile.Create(DestFolder+FileName);<BR>
-    		    try<BR>
-      			    FileStream.CopyFrom(Context.Request.Files[I].Stream, 0);<BR>
-    		    finally<BR>
-      			    FileStream.Free;<BR>
-                    <BR>
-                    // Notify to client<BR>
-                    Render('File "'+FileName+'" is Uploaded ..');<BR>
-    		    end;<BR>
-  		    end;<BR>
-        end;<BR>
+    > procedure TEmployeeController.UploadFile(imageType : String;id:
+    > Integer);<BR> var FileName: string;<BR>
+    >     FileStream: TFileStream; //System.Classes.TFileStream<BR>
+    >     I : Integer;<BR>
+    >     DestFolder : string; //System.IOUtils.TFile<BR> <BR> begin<BR>
+    >     // 6503-04 21.30<BR>
+    >     // แยกโฟลเดอร์ ในการทำงานโดยให้ส่ง imageType เข้ามา<BR>
+    >     // imageType >> 'emp' , 'product' , 'member'<BR>
+    >     // กำหนด Foloder ตามต้องการ<BR>
+    >     DestFolder := '...\images\'+imageType+'\';<BR>
+    >     //-------------------------------<BR>
+    >     // use Form-Data Only !!<BR>
+    >     //-------------------------------<BR>
+    >     for I := 0 to Context.Request.RawWebRequest.Files.Count - 1 do<BR>
+    >         begin<BR>
+    > 		    FileName := String(Context.Request.Files[I].FileName);<BR>
+    > 		    FileStream := TFile.Create(DestFolder+FileName);<BR>
+    > 		    try<BR>
+    >   			    FileStream.CopyFrom(Context.Request.Files[I].Stream, 0);<BR>
+    > 		    finally<BR>
+    >   			    FileStream.Free;<BR>
+    >                 <BR>
+    >                 // Notify to client<BR>
+    >                 Render('File "'+FileName+'" is Uploaded ..');<BR>
+    > 		    end;<BR>
+    > 	    end;<BR>
+    >     end;<BR>
 
 
 
