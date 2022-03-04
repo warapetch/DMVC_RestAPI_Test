@@ -4,6 +4,10 @@
 
 
 
+🔷 แผนภูมิระบบ
+![โปรเจค DMVC](https://user-images.githubusercontent.com/6521378/156784812-e15176d8-fa5f-4d66-ab73-9e52fcd8b8d5.png)
+
+
 
 🔷 Video Youtube <BR>
 📌 วีดีโอ EP16 ตอน 5 ทดสอบ Rest API <BR>
