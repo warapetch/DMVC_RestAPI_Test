@@ -11,7 +11,7 @@ Rest API ด้วย DelphiMVCFramework <BR>
     โค้ดในส่วนของการอัพโหลดไฟล์ <BR>
     #UploadFile <BR>
   ``` pascal
-    procedure TEmployeeController.UploadFile(imageType : String;id:> Integer);
+    procedure TEmployeeController.UploadFile(imageType : String;id: Integer);
     var FileName: string;
         FileStream: TFileStream; //System.Classes.TFileStream
         I : Integer;
@@ -21,7 +21,7 @@ Rest API ด้วย DelphiMVCFramework <BR>
          // แยกโฟลเดอร์ ในการทำงานโดยให้ส่ง imageType เข้ามา
          // imageType >> 'emp' , 'product' , 'member'
          // กำหนด Foloder ตามต้องการ
-         DestFolder := '...\images\\'+imageType+'\\';
+         DestFolder := '...\images\'+imageType+'\';
          //-------------------------------
          // use Form-Data Only !!
          //-------------------------------
